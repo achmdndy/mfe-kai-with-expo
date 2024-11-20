@@ -1,0 +1,10 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '🤔🤔 Check your commit message'
+
+npx --no -- commitlint --edit "$1" ||
+(
+  echo '❌❌❌ Your commit is bad I dont know what you are doing ❌❌❌';
+  false;
+)

@@ -1,0 +1,39 @@
+{
+  "name": "kai-apps",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "yarn": "please-use-bun",
+    "npm": "please-use-bun",
+    "bun": ">=1.1.27"
+  },
+  "packageManager": "bun@1.1.27",
+  "scripts": {
+    "turbo": "turbo start --filter=\"{./apps/main}...\"",
+    "dev:turbo": "turbo run dev",
+    "clean": "turbo run clean",
+    "dev:ios:main": "bun run --cwd ./apps/main dev:ios",
+    "dev:android:main": "bun run --cwd ./apps/main dev:android",
+    "build:android:local:main": "bun run --cwd ./apps/main build:android:local",
+    "check-format": "biome format .",
+    "lint-format": "biome lint .",
+    "check-lint": "biome check .",
+    "test-all": "bun check-format && bun lint-format && bun check-lint && bun build",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "husky": "^9.1.6",
+    "turbo": "^2.0.3"
+  },
+  "dependencies": {
+    "kai-apps": "."
+  }
+}

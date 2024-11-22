@@ -7,7 +7,11 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": []
+		"ignore": [
+			"./packages/core-components/src/components/deprecated-ui",
+			"./packages/core-components/src/components/primitives",
+			"./packages/core-components/src/components/ui"
+		]
 	},
 	"formatter": {
 		"enabled": true,

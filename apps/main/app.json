@@ -1,43 +1,43 @@
 {
-  "expo": {
-    "name": "Access By KAI",
-    "slug": "access-by-kai",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/images/icon-ios.png",
-    "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.kai.access"
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/icon-android.png",
-        "backgroundColor": "#ffffff"
-      },
-      "package": "com.kai.access"
-    },
-    "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/icon-ios.png"
-    },
-    "plugins": [
-      "expo-router",
-      [
-        "expo-splash-screen",
-        {
-          "image": "./assets/images/splash.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
-        }
-      ]
-    ],
-    "experiments": {
-      "typedRoutes": true
-    }
-  }
+	"expo": {
+		"name": "Access By KAI",
+		"slug": "access-by-kai",
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"icon": "./assets/images/icon-ios.png",
+		"scheme": "myapp",
+		"userInterfaceStyle": "automatic",
+		"newArchEnabled": true,
+		"ios": {
+			"supportsTablet": true,
+			"bundleIdentifier": "com.kai.access"
+		},
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/images/icon-android.png",
+				"backgroundColor": "#ffffff"
+			},
+			"package": "com.kai.access"
+		},
+		"web": {
+			"bundler": "metro",
+			"output": "static",
+			"favicon": "./assets/images/icon-ios.png"
+		},
+		"plugins": [
+			"expo-router",
+			[
+				"expo-splash-screen",
+				{
+					"image": "./assets/images/splash.png",
+					"imageWidth": 200,
+					"resizeMode": "contain",
+					"backgroundColor": "#ffffff"
+				}
+			]
+		],
+		"experiments": {
+			"typedRoutes": true
+		}
+	}
 }

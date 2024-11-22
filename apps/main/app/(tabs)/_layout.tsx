@@ -1,19 +1,15 @@
-import { BadgePercent, TabIcon } from "@kai/core-components";
+import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
+import { BadgePercent } from "lucide-react-native";
 import React from "react";
-import { Platform } from "react-native";
 
 export default function TabLayout() {
 	return (
 		<Tabs
+			initialRouteName="index"
 			screenOptions={{
+				tabBarActiveTintColor: "#2668ED",
 				headerShown: false,
-				tabBarStyle: Platform.select({
-					ios: {
-						position: "absolute",
-					},
-					default: {},
-				}),
 			}}
 		>
 			<Tabs.Screen
@@ -21,16 +17,24 @@ export default function TabLayout() {
 				options={{
 					title: "Beranda",
 					tabBarIcon: ({ color, focused }) => (
-						<TabIcon name={focused ? "home" : "home-outline"} color={color} />
+						<Ionicons
+							size={24}
+							name={focused ? "home" : "home-outline"}
+							color={color}
+						/>
 					),
 				}}
 			/>
 			<Tabs.Screen
 				name="train"
 				options={{
-					title: "Train",
+					title: "Kereta",
 					tabBarIcon: ({ color, focused }) => (
-						<TabIcon name={focused ? "train" : "train-outline"} color={color} />
+						<Ionicons
+							size={24}
+							name={focused ? "train" : "train-outline"}
+							color={color}
+						/>
 					),
 				}}
 			/>
@@ -39,20 +43,21 @@ export default function TabLayout() {
 				options={{
 					title: "Tiket Saya",
 					tabBarIcon: ({ color, focused }) => (
-						<TabIcon
+						<Ionicons
+							size={24}
 							name={focused ? "ticket" : "ticket-outline"}
 							color={color}
-							size={28}
-							className="rotate-45"
 						/>
 					),
 				}}
 			/>
 			<Tabs.Screen
-				name="promotion"
+				name="promo"
 				options={{
 					title: "Promo",
-					tabBarIcon: ({ color }) => <BadgePercent size={28} color={color} />,
+					tabBarIcon: ({ color, focused }) => (
+						<BadgePercent color={color} size={24} />
+					),
 				}}
 			/>
 			<Tabs.Screen
@@ -60,7 +65,8 @@ export default function TabLayout() {
 				options={{
 					title: "Akun",
 					tabBarIcon: ({ color, focused }) => (
-						<TabIcon
+						<Ionicons
+							size={24}
 							name={focused ? "person" : "person-outline"}
 							color={color}
 						/>

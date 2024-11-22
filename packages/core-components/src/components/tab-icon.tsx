@@ -1,10 +1,21 @@
-import Ionicons from "@expo/vector-icons/Ionicons";
-import type { IconProps } from "@expo/vector-icons/build/createIconSet";
 import type { ComponentProps } from "react";
+import { Image, Platform } from "react-native";
+import { cn } from "../lib";
 
-export const TabIcon = ({
-	style,
-	...rest
-}: IconProps<ComponentProps<typeof Ionicons>["name"]>) => {
-	return <Ionicons size={28} style={[{ marginBottom: -3 }, style]} {...rest} />;
+type TabIconProps = ComponentProps<typeof Image> & {
+	active: boolean;
+};
+
+export const TabIcon = ({ className, active, ...props }: TabIconProps) => {
+	return (
+		<Image
+			style={{ tintColor: active ? "#FFD500" : "#000000" }}
+			className={cn(
+				"!h-8 !w-8",
+				Platform.OS === "android" && "!h-7 !w-7",
+				className,
+			)}
+			{...props}
+		/>
+	);
 };

@@ -1,10 +1,41 @@
-import { Stack } from "expo-router/stack";
+import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
+import { DeprecatedUi, Primitives, ThemeProvider } from "@kai/core-components";
+import { Stack } from "expo-router";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-export default function Layout() {
+const { ToastProvider } = DeprecatedUi;
+const { PortalHost } = Primitives;
+
+export { ErrorBoundary } from "expo-router";
+
+export default function RootLayout() {
 	return (
-		<Stack screenOptions={{ headerShown: false }}>
-			<Stack.Screen name="index" options={{}} />
-			<Stack.Screen name="(train)" />
-		</Stack>
+		<ThemeProvider>
+			<GestureHandlerRootView style={{ flex: 1 }}>
+				<BottomSheetModalProvider>
+					<Stack
+						initialRouteName="(train)"
+						screenOptions={{
+							headerShown: false,
+						}}
+					>
+						<Stack.Screen
+							name="(train)"
+							options={{
+								headerShown: false,
+							}}
+						/>
+						<Stack.Screen
+							name="+not-found"
+							options={{
+								headerShown: false,
+							}}
+						/>
+					</Stack>
+				</BottomSheetModalProvider>
+			</GestureHandlerRootView>
+			<PortalHost />
+			<ToastProvider />
+		</ThemeProvider>
 	);
 }

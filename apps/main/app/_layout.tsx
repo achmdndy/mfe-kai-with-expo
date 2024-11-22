@@ -1,26 +1,36 @@
-import { DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { StatusBar } from 'expo-status-bar';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
+import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
+import { DeprecatedUi, Primitives, ThemeProvider } from "@kai/core-components";
+import { Stack } from "expo-router";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
+const { ToastProvider } = DeprecatedUi;
+const { PortalHost } = Primitives;
+
+export { ErrorBoundary } from "expo-router";
 
 export default function RootLayout() {
-
-  useEffect(() => {
-      SplashScreen.hideAsync();
-  }, []);
-
-  return (
-    <ThemeProvider value={DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
-  );
+	return (
+		<ThemeProvider>
+			<GestureHandlerRootView style={{ flex: 1 }}>
+				<BottomSheetModalProvider>
+					<Stack screenOptions={{ headerShown: false }}>
+						<Stack.Screen
+							name="(tabs)"
+							options={{
+								headerShown: false,
+							}}
+						/>
+						<Stack.Screen
+							name="+not-found"
+							options={{
+								headerShown: false,
+							}}
+						/>
+					</Stack>
+				</BottomSheetModalProvider>
+			</GestureHandlerRootView>
+			<PortalHost />
+			<ToastProvider />
+		</ThemeProvider>
+	);
 }

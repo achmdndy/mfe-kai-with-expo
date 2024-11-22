@@ -1,0 +1,12 @@
+export const ChillingIllustration = require("./chilling-illustration.png");
+export const ConfirmedIllustration = require("./confirmed-illustration.png");
+export const DestinationIllustration = require("./destination-illustration.png");
+export const TravelersIllustration = require("./travelers-illustration.png");
+export const TravelModeIllustration = require("./travel-mode-illustration.png");
+export const SampleDestination1 = require("./sample-destination-1.webp");
+export const SampleDestination2 = require("./sample-destination-2.webp");
+export const SamplePromo1 = require("./sample-promo-1.webp");
+export const SamplePromo2 = require("./sample-promo-2.webp");
+export const SampleExchange = require("./sample-exchange.webp");
+export const SampleArticle1 = require("./sample-article-1.webp");
+export const SampleArticle2 = require("./sample-article-2.webp");

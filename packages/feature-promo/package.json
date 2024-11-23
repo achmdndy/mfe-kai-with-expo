@@ -25,6 +25,7 @@
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
 		"expo": "~51.0.24",
+		"expo-router": "~3.5.23",
 		"expo-linear-gradient": "~13.0.2",
 		"expo-navigation-bar": "^3.0.7",
 		"lucide-react-native": "^0.460.0",

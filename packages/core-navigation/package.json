@@ -15,6 +15,7 @@
 	"dependencies": {
 		"@react-navigation/native": "^6.0.2",
 		"expo": "~51.0.24",
+		"expo-router": "~3.5.23",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"react-native": "0.74.5"

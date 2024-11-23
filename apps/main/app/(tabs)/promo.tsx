@@ -1,10 +1,5 @@
-import { Text } from "@kai/core-components";
-import { View } from "react-native";
+import { PromoScreen } from "@kai/feature-promo";
 
 export default function Promo() {
-	return (
-		<View className="flex items-center justify-center h-screen">
-			<Text>Promo</Text>
-		</View>
-	);
+	return <PromoScreen />;
 }

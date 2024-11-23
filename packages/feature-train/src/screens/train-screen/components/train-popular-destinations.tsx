@@ -30,7 +30,7 @@ export const TrainPopularDestinations = () => {
 						overlayTitle={item.title}
 						imageProps={{
 							style: {
-								maxWidth: 360,
+								maxWidth: "100%",
 								aspectRatio: 10 / 4,
 								height: 150,
 							},

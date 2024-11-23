@@ -8,7 +8,7 @@ export const PromoScreen = () => {
 	return (
 		<Fragment>
 			<PromoHeader />
-			<ScrollView>
+			<ScrollView showsVerticalScrollIndicator={false}>
 				<PromoNew />
 				<PromoList />
 			</ScrollView>

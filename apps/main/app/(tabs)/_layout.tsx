@@ -47,6 +47,7 @@ export default function TabLayout() {
 							size={24}
 							name={focused ? "ticket" : "ticket-outline"}
 							color={color}
+							className="rotate-45"
 						/>
 					),
 				}}
@@ -55,9 +56,7 @@ export default function TabLayout() {
 				name="promo"
 				options={{
 					title: "Promo",
-					tabBarIcon: ({ color, focused }) => (
-						<BadgePercent color={color} size={24} />
-					),
+					tabBarIcon: ({ color }) => <BadgePercent color={color} size={24} />,
 				}}
 			/>
 			<Tabs.Screen

@@ -20,6 +20,7 @@
 		"@react-navigation/native": "^6.0.2",
 		"@shopify/flash-list": "^1.7.2",
 		"@tanstack/react-table": "^8.20.5",
+		"@kai/core-assets": "*",
 		"@kai/core-components": "*",
 		"@kai/feature-account": "workspace:*",
 		"class-variance-authority": "^0.7.0",

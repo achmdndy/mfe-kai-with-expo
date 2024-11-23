@@ -1,10 +1,5 @@
-import { Text } from "@kai/core-components";
-import { View } from "react-native";
+import { AccountScreen } from "@kai/feature-account";
 
 export default function Account() {
-	return (
-		<View className="flex items-center justify-center h-screen">
-			<Text>Account</Text>
-		</View>
-	);
+	return <AccountScreen />;
 }

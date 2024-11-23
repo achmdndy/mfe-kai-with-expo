@@ -1,10 +1,5 @@
-import { Text } from "@kai/core-components";
-import { View } from "react-native";
+import { TrainScreen } from "@kai/feature-train";
 
 export default function Train() {
-	return (
-		<View className="flex items-center justify-center h-screen">
-			<Text>Train</Text>
-		</View>
-	);
+	return <TrainScreen />;
 }

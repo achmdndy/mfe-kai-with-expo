@@ -1,3 +1,4 @@
+import { LinearGradient } from "expo-linear-gradient";
 import type { ComponentProps } from "react";
 import {
 	Image,
@@ -35,9 +36,13 @@ export const ContentTile = ({
 		<TouchableOpacity className="flex flex-col items-start gap-2" {...props}>
 			<View className="flex items-center justify-center">
 				{overlay && (
-					<View
-						className="bg-black/40 p-4"
+					<LinearGradient
+						colors={["rgba(0,0,0,0.8)", "rgba(0,0,0,0)", "rgba(0,0,0,0)"]}
+						locations={[0, 0.4, 1]}
+						start={[0, 0]}
+						end={[1, 0]}
 						style={{
+							padding: 16,
 							borderRadius: 12,
 							zIndex: 10,
 							position: "absolute",
@@ -60,7 +65,7 @@ export const ContentTile = ({
 								{overlayTitle}
 							</H1>
 						)}
-					</View>
+					</LinearGradient>
 				)}
 				<Image
 					source={image}

@@ -1,5 +1,10 @@
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
-import { DeprecatedUi, Primitives, ThemeProvider } from "@kai/core-components";
+import {
+	AuthProvider,
+	DeprecatedUi,
+	Primitives,
+	ThemeProvider,
+} from "@kai/core-components";
 import { Stack } from "expo-router";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
@@ -13,25 +18,27 @@ export default function RootLayout() {
 		<ThemeProvider>
 			<GestureHandlerRootView style={{ flex: 1 }}>
 				<BottomSheetModalProvider>
-					<Stack
-						initialRouteName="(train)"
-						screenOptions={{
-							headerShown: false,
-						}}
-					>
-						<Stack.Screen
-							name="(train)"
-							options={{
+					<AuthProvider>
+						<Stack
+							initialRouteName="(train)"
+							screenOptions={{
 								headerShown: false,
 							}}
-						/>
-						<Stack.Screen
-							name="+not-found"
-							options={{
-								headerShown: false,
-							}}
-						/>
-					</Stack>
+						>
+							<Stack.Screen
+								name="(train)"
+								options={{
+									headerShown: false,
+								}}
+							/>
+							<Stack.Screen
+								name="+not-found"
+								options={{
+									headerShown: false,
+								}}
+							/>
+						</Stack>
+					</AuthProvider>
 				</BottomSheetModalProvider>
 			</GestureHandlerRootView>
 			<PortalHost />

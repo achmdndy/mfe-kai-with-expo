@@ -13,6 +13,7 @@
 		"bun": ">=1.1.27"
 	},
 	"dependencies": {
+		"@clerk/clerk-expo": "^2.3.10",
 		"@expo/vector-icons": "^14.0.4",
 		"@gorhom/bottom-sheet": "^5.0.5",
 		"@kai/core-assets": "*",
@@ -29,6 +30,9 @@
 		"clsx": "^2.1.1",
 		"expo": "~51.0.24",
 		"expo-router": "~3.5.23",
+		"expo-linking": "~6.3.1",
+		"expo-crypto": "~13.0.2",
+		"expo-secure-store": "~13.0.2",
 		"expo-linear-gradient": "~13.0.2",
 		"expo-navigation-bar": "^3.0.7",
 		"lucide-react-native": "^0.460.0",

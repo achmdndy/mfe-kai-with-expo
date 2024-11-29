@@ -5,7 +5,7 @@
 		"version": "1.0.0",
 		"orientation": "portrait",
 		"icon": "./assets/images/icon-ios.png",
-		"scheme": "myapp",
+		"scheme": "apps-main",
 		"userInterfaceStyle": "automatic",
 		"newArchEnabled": true,
 		"ios": {
@@ -34,7 +34,8 @@
 					"resizeMode": "contain",
 					"backgroundColor": "#ffffff"
 				}
-			]
+			],
+			"expo-secure-store"
 		],
 		"experiments": {
 			"typedRoutes": true

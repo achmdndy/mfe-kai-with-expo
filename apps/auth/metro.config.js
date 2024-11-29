@@ -10,7 +10,13 @@ const configDefault = (() => {
 			drop_console: true,
 		},
 	};
-
+	const monorepoRoot = path.resolve(__dirname, "../..");
+	config.watchFolders = [monorepoRoot];
+	config.resolver.nodeModulesPaths = [
+		path.resolve(__dirname, "node_modules"),
+		path.resolve(monorepoRoot, "node_modules"),
+	];
+	config.resolver.disableHierarchicalLookup = true;
 	config.transformer = {
 		...transformer,
 		babelTransformerPath: require.resolve("react-native-svg-transformer"),

@@ -3,7 +3,7 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"@kai/apps-train": ["./*"]
+			"@kai/apps-train/*": ["./*"]
 		},
 		"jsx": "react-native",
 		"types": ["nativewind/types", "node", "react"],

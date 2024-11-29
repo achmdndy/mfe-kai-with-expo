@@ -1,12 +1,15 @@
+import { SignedIn, useUser } from "@clerk/clerk-expo";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { Button, Text } from "@kai/core-components";
 import { LinearGradient } from "expo-linear-gradient";
+import { router } from "expo-router";
 import { Animated, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { HomePay } from "./home-pay";
 
 export const HomeHeader = () => {
 	const insets = useSafeAreaInsets();
+	const { user } = useUser();
 
 	return (
 		<View style={{ paddingTop: insets.top }} className="h-[280px] relative">
@@ -23,7 +26,10 @@ export const HomeHeader = () => {
 			<View className="flex flex-row items-center justify-between px-4">
 				<View>
 					<Text className="text-white text-sm">Selamat Sore</Text>
-					<Text className="text-white font-semibold">Tamu</Text>
+					<SignedIn>
+						<Text>Hello {user?.emailAddresses[0].emailAddress}</Text>
+					</SignedIn>
+					{/* <Text className="text-white font-semibold">Tamu</Text> */}
 				</View>
 
 				<View className="flex flex-row items-center gap-2">
@@ -42,6 +48,7 @@ export const HomeHeader = () => {
 						<Ionicons name="mail" size={18} color={"#FFFFFF"} />
 					</Button>
 					<Button
+						onPress={() => router.navigate("/./(other)/help")}
 						variant={"ghost"}
 						size={"icon"}
 						className="rounded-full bg-white/20 !w-28 flex-row gap-2"
